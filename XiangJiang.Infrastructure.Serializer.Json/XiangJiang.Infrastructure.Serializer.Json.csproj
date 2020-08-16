@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>YanZhiwei</Authors>
+    <Company>YanZhiwei</Company>
+    <Product>XiangJiang</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>nugetico.png</PackageIcon>
+    <Description>Json serialization and deserialization tool library based on Newtonsoft.Json,using the document: https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json/wiki; Welcome to pull request or star.</Description>
+    <RepositoryUrl>https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="XiangJiang" Version="1.0.3" />
+    <PackageReference Include="XiangJiang.Infrastructure.Abstractions" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.assets\nugetico.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
