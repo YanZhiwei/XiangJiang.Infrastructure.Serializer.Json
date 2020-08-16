@@ -18,7 +18,6 @@ namespace XiangJiang.Infrastructure.Serializer.Json
             var result = false;
             if (jsonText.StartsWith("{") && jsonText.EndsWith("}") ||
                 jsonText.StartsWith("[") && jsonText.EndsWith("]"))
-            {
                 try
                 {
                     JToken.Parse(jsonText);
@@ -28,7 +27,7 @@ namespace XiangJiang.Infrastructure.Serializer.Json
                 {
                     result = false;
                 }
-            }
+
             return result;
         }
 
