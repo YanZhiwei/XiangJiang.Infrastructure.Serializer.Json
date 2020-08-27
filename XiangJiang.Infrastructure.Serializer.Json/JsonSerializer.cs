@@ -1,6 +1,6 @@
-﻿using System.Data;
-using System.IO;
+﻿using System.IO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using XiangJiang.Core;
 using XiangJiang.Infrastructure.Abstractions;
 
@@ -11,6 +11,13 @@ namespace XiangJiang.Infrastructure.Serializer.Json
     /// </summary>
     public class JsonSerializer : ISerializer
     {
+        private readonly JsonSerializerSettings _serializerSettings;
+
+        public JsonSerializer(JsonSerializerSettings serializerSettings = null)
+        {
+            _serializerSettings = serializerSettings ?? DefaultSettings();
+        }
+
         #region Methods
 
         /// <summary>
@@ -24,7 +31,6 @@ namespace XiangJiang.Infrastructure.Serializer.Json
             Checker.Begin().NotNullOrEmpty(data, nameof(data));
             T deserializedType = default;
             var serializer = new Newtonsoft.Json.JsonSerializer();
-            Initialize(serializer);
             using (var reader = new StringReader(data))
             {
                 using (var jsonReader = new JsonTextReader(reader))
@@ -32,6 +38,7 @@ namespace XiangJiang.Infrastructure.Serializer.Json
                     deserializedType = serializer.Deserialize<T>(jsonReader);
                 }
             }
+
             return deserializedType;
         }
 
@@ -42,40 +49,21 @@ namespace XiangJiang.Infrastructure.Serializer.Json
         /// <returns>Json字符串</returns>
         public string Serialize(object serializeObject)
         {
-            Checker.Begin()
-                .NotNull(serializeObject, nameof(serializeObject))
-                .IsSerializable(serializeObject);
-
-            var type = serializeObject.GetType();
-            var serializer = new Newtonsoft.Json.JsonSerializer();
-            Initialize(serializer);
-
-            if (type == typeof(DataRow))
-                serializer.Converters.Add(new DataRowConverter());
-            else if (type == typeof(DataTable))
-                serializer.Converters.Add(new DataTableConverter());
-            else if (type == typeof(DataSet))
-                serializer.Converters.Add(new DataSetConverter());
-
-            using (var writer = new StringWriter())
-            {
-                using (var jsonWriter = new JsonTextWriter(writer))
-                {
-                    jsonWriter.Formatting = Formatting.None;
-                    jsonWriter.QuoteChar = '"';
-                    serializer.Serialize(jsonWriter, serializeObject);
-                    return writer.ToString();
-                }
-            }
+            Checker.Begin().NotNull(serializeObject, nameof(serializeObject));
+            return JsonConvert.SerializeObject(serializeObject, _serializerSettings);
         }
 
-        private static void Initialize(Newtonsoft.Json.JsonSerializer jsonSerializer)
+        private JsonSerializerSettings DefaultSettings()
         {
-            if (jsonSerializer == null) return;
-            jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
-            jsonSerializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-            jsonSerializer.MissingMemberHandling = MissingMemberHandling.Ignore;
-            jsonSerializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            var serializerSettings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                ObjectCreationHandling = ObjectCreationHandling.Replace,
+                MissingMemberHandling = MissingMemberHandling.Ignore,
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            return serializerSettings;
         }
 
         #endregion Methods
