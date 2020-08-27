@@ -10,7 +10,7 @@
     <Description>Json serialization and deserialization tool library based on Newtonsoft.Json,using the document: https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json/wiki; Welcome to pull request or star.</Description>
     <RepositoryUrl>https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json</RepositoryUrl>
     <PackageProjectUrl>https://github.com/YanZhiwei/XiangJiang.Infrastructure.Serializer.Json</PackageProjectUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
