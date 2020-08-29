@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiangJiang.Infrastructure.Serializer.Json", "XiangJiang.Infrastructure.Serializer.Json\XiangJiang.Infrastructure.Serializer.Json.csproj", "{8C0D2D96-433E-407B-BDDD-721CEEBDD7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Infrastructure.Serializer.Json", "XiangJiang.Infrastructure.Serializer.Json\XiangJiang.Infrastructure.Serializer.Json.csproj", "{8C0D2D96-433E-407B-BDDD-721CEEBDD7DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiangJiang.Infrastructure.Serializer.JsonTests", "XiangJiang.Infrastructure.Serializer.JsonTests\XiangJiang.Infrastructure.Serializer.JsonTests.csproj", "{6CB4BAC9-E86E-478B-BE5B-DD643E3A61D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8C0D2D96-433E-407B-BDDD-721CEEBDD7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C0D2D96-433E-407B-BDDD-721CEEBDD7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C0D2D96-433E-407B-BDDD-721CEEBDD7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB4BAC9-E86E-478B-BE5B-DD643E3A61D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB4BAC9-E86E-478B-BE5B-DD643E3A61D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB4BAC9-E86E-478B-BE5B-DD643E3A61D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB4BAC9-E86E-478B-BE5B-DD643E3A61D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
