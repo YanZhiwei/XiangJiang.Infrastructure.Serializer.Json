@@ -1,9 +1,9 @@
-﻿using XiangJiang.Infrastructure.Serializer.Json;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XiangJiang.Infrastructure.Abstractions;
+using XiangJiang.Infrastructure.Serializer.Json;
 using XiangJiang.Infrastructure.Serializer.JsonTests.Models;
 
-namespace XiangJiang.Infrastructure.Serializer.Json.Tests
+namespace XiangJiang.Infrastructure.Serializer.JsonTests
 {
     [TestClass]
     public class JsonSerializerTests
