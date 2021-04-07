@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace XiangJiang.Infrastructure.Serializer.Json
+namespace XiangJiang.Infrastructure.Serializer.Json.Converters
 {
     /// <summary>
     ///     序列化时候自定义时间格式

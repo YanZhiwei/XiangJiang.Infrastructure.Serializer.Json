@@ -2,7 +2,7 @@
 using System.Data;
 using Newtonsoft.Json;
 
-namespace XiangJiang.Infrastructure.Serializer.Json
+namespace XiangJiang.Infrastructure.Serializer.Json.Converters
 {
     /// <summary>
     ///     DataRowConverter转换器

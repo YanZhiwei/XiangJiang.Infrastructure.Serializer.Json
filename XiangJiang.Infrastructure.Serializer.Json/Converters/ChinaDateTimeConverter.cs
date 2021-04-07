@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace XiangJiang.Infrastructure.Serializer.Json
+namespace XiangJiang.Infrastructure.Serializer.Json.Converters
 {
     /// <summary>
     ///     中国时间转换器
